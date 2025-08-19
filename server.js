@@ -14,7 +14,7 @@ app.use("/api/leave", leaveRoutes);
 sequelize
   .authenticate()
   .then(() => {
-    console.log("✅ Database connected");
+    console.log("Database connected");
     return sequelize.sync();
   })
   .then(() => {
