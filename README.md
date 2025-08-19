@@ -4,10 +4,10 @@ Configure Environment Variables
 Create a .env file with the following:
 DB_HOST=localhost
 DB_USER=root
-DB_PASS=root
+DB_PASS=****
 DB_NAME=leave_management
 PORT=5000
-JWT_SECRET=af0244f165dfab15ae5ab7d04b803ecdfb83227fa3b360110c53faa1d1726069
+JWT_SECRET=****
 JWT_EXPIRES_IN=7d
 
 To start backend server -> node server.js
