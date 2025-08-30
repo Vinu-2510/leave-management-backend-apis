@@ -24,8 +24,9 @@ action	ENUM	APPLY / APPROVE / REJECT
 action_date	DATETIME	NOT NULL
 processed_by	VARCHAR	HR/Admin user who performed the action
 
-3. Relationships
+Relationships
 
 Employee → Leave: One employee can apply for many leaves (1:N).
+
 
 Leave → LeaveTransaction: One leave request can have multiple transactions (1:N).
