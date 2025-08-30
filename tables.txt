@@ -1,0 +1,31 @@
+a) Employee Table
+Column	Type	Constraints
+employee_id	INT	PK, Auto Increment
+name	VARCHAR	NOT NULL
+email	VARCHAR	Unique, NOT NULL
+department	VARCHAR	NOT NULL
+joining_date	DATE	NOT NULL
+leave_balance	INT	Default 12 (configurable)
+
+b) Leave Table
+Column	Type	Constraints
+leave_id	INT	PK, Auto Increment
+employee_id	INT	FK → Employee.employee_id
+start_date	DATE	NOT NULL
+end_date	DATE	NOT NULL
+reason	VARCHAR	NULLABLE
+status	ENUM	Values: PENDING / APPROVED / REJECTED
+
+c) LeaveTransaction Table
+Column	Type	Constraints
+transaction_id	INT	PK, Auto Increment
+leave_id	INT	FK → Leave.leave_id
+action	ENUM	APPLY / APPROVE / REJECT
+action_date	DATETIME	NOT NULL
+processed_by	VARCHAR	HR/Admin user who performed the action
+
+3. Relationships
+
+Employee → Leave: One employee can apply for many leaves (1:N).
+
+Leave → LeaveTransaction: One leave request can have multiple transactions (1:N).
